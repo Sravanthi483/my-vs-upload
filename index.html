@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1><i class="fas fa-wallet"></i> Expense Tracker</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Income</a></li>
+            <li><a href="#">Expenses</a></li>
+            <li><a href="#">Reports</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            
+            <!-- Balance Card -->
+            <div class="card balance">
+    <h2>Current Balance</h2>
+    <h1 id="balance">₹0</h1>
+</div>
+
+            <!-- Income & Expense Cards -->
+            <div class="cards">
+
+                <div class="card income">
+                   <h3>Total Income</h3>
+                   <p id="totalIncome">₹0</p>
+                </div>
+
+                <div class="card expense">
+                   <h3>Total Expense</h3>
+                   <p id="totalExpense">₹0</p>
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <button id="addIncome">
+                    <i class="fas fa-plus-circle"></i> Add Income
+                </button>
+
+                <button id="addExpense">
+                    <i class="fas fa-minus-circle"></i> Add Expense
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Add Income Form -->
+        <div class="form-container" id="incomeForm">
+
+            <h2>Add Income</h2>
+
+            <form id="incomeFormData">
+
+                <label>Income Amount</label>
+                <input
+                    type="number"
+                    id="incomeAmount"
+                    placeholder="Enter Amount"
+                    required>
+
+                <label>Category</label>
+
+                <select id="incomeCategory" required>
+                    <option value="">Select Category</option>
+                    <option>Salary</option>
+                    <option>Freelancing</option>
+                    <option>Business</option>
+                    <option>Investment</option>
+                    <option>Bonus</option>
+                    <option>Other</option>
+                </select>
+
+                <label>Date</label>
+
+                <input
+                    type="date"
+                    id="incomeDate"
+                    required>
+
+                <label>Description</label>
+
+                <textarea
+                    id="incomeDescription"
+                    placeholder="Enter Description"
+                    rows="4"></textarea>
+
+                <button type="submit" class="saveBtn">
+                    Save Income
+                </button>
+
+            </form>
+
+        </div>
+        <!-- Add Expense Form -->
+<div class="form-container" id="expenseForm">
+
+    <h2>Add Expense</h2>
+
+    <form id="expenseFormData">
+
+        <label>Expense Amount</label>
+        <input
+            type="number"
+            id="expenseAmount"
+            placeholder="Enter Expense Amount"
+            required>
+
+        <label>Category</label>
+
+        <select id="expenseCategory" required>
+            <option value="">Select Category</option>
+            <option>Food</option>
+            <option>Shopping</option>
+            <option>Travel</option>
+            <option>Bills</option>
+            <option>Education</option>
+            <option>Health</option>
+            <option>Entertainment</option>
+        </select>
+
+        <label>Date</label>
+
+        <input
+            type="date"
+            id="expenseDate"
+            required>
+
+        <label>Description</label>
+
+        <textarea
+            id="expenseDescription"
+            placeholder="Enter Description"
+            rows="4"></textarea>
+
+        <button type="submit" class="expenseBtn">
+            Save Expense
+        </button>
+
+    </form>
+
+</div>
+
+        <!-- Recent Transactions -->
+        <section class="transactions">
+
+            <h2>Recent Transactions</h2>
+
+           <div class="transaction-list" id="transactionList">
+
+    <div class="empty" id="emptyMessage">
+        <i class="fas fa-receipt"></i>
+        <p>No Transactions Yet</p>
+    </div>
+
+</div> 
+
+        </section>
+
+    </div>
+    <!-- Monthly Reports -->
+
+<section class="monthly-report">
+
+    <h2>Monthly Report</h2>
+
+    <div id="monthlyReport">
+
+        <p>No Report Available</p>
+
+    </div>
+
+</section>
+<section class="chart-section">
+
+    <h2>Expense Distribution</h2>
+
+    <canvas id="expenseChart"></canvas>
+
+</section>
+
+    <!-- JavaScript -->
+   <!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
